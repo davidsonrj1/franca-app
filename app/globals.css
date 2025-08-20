@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to exact FRANCA brand colors from manual */
+  --background: #ffffff; /* White */
+  --foreground: #081534; /* Navy blue */
+  --card: #f2fcf4; /* Light green background */
+  --card-foreground: #081534; /* Navy blue */
+  --popover: #ffffff; /* White */
+  --popover-foreground: #081534; /* Navy blue */
+  --primary: #7de08d; /* Main green */
+  --primary-foreground: #081534; /* Navy blue */
+  --secondary: #598f74; /* Secondary green */
+  --secondary-foreground: #ffffff; /* White */
+  --muted: #f2fcf4; /* Light green */
+  --muted-foreground: #598f74; /* Secondary green */
+  --accent: #7de08d; /* Main green */
+  --accent-foreground: #081534; /* Navy blue */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d7f5dc; /* Light green border */
+  --input: #ffffff; /* White */
+  --ring: #7de08d; /* Main green */
+  --chart-1: #7de08d; /* Main green */
+  --chart-2: #598f74; /* Secondary green */
+  --chart-3: #081534; /* Navy blue */
+  --chart-4: #f2fcf4; /* Light green */
+  --chart-5: #ffffff; /* White */
+  --radius: 0.5rem;
+  --sidebar: #f2fcf4; /* Light green */
+  --sidebar-foreground: #081534; /* Navy blue */
+  --sidebar-primary: #7de08d; /* Main green */
+  --sidebar-primary-foreground: #081534; /* Navy blue */
+  --sidebar-accent: #598f74; /* Secondary green */
+  --sidebar-accent-foreground: #ffffff; /* White */
+  --sidebar-border: #d7f5dc; /* Light green border */
+  --sidebar-ring: #7de08d; /* Main green */
+}
+
+.dark {
+  /* Dark mode using FRANCA navy as primary background */
+  --background: #081534; /* Navy blue */
+  --foreground: #ffffff; /* White */
+  --card: #0a1a3a; /* Darker navy */
+  --card-foreground: #ffffff; /* White */
+  --popover: #0a1a3a; /* Darker navy */
+  --popover-foreground: #ffffff; /* White */
+  --primary: #7de08d; /* Main green */
+  --primary-foreground: #081534; /* Navy blue */
+  --secondary: #598f74; /* Secondary green */
+  --secondary-foreground: #ffffff; /* White */
+  --muted: #0f2142; /* Muted navy */
+  --muted-foreground: #7de08d; /* Main green */
+  --accent: #7de08d; /* Main green */
+  --accent-foreground: #081534; /* Navy blue */
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #0f2142; /* Muted navy */
+  --input: #0a1a3a; /* Darker navy */
+  --ring: #7de08d; /* Main green */
+  --chart-1: #7de08d; /* Main green */
+  --chart-2: #598f74; /* Secondary green */
+  --chart-3: #ffffff; /* White */
+  --chart-4: #0f2142; /* Muted navy */
+  --chart-5: #dc2626;
+  --sidebar: #0a1a3a; /* Darker navy */
+  --sidebar-foreground: #ffffff; /* White */
+  --sidebar-primary: #7de08d; /* Main green */
+  --sidebar-primary-foreground: #081534; /* Navy blue */
+  --sidebar-accent: #598f74; /* Secondary green */
+  --sidebar-accent-foreground: #ffffff; /* White */
+  --sidebar-border: #0f2142; /* Muted navy */
+  --sidebar-ring: #7de08d; /* Main green */
+}
+
+@theme inline {
+  /* Updated font configuration to use Poppins as primary font */
+  --font-sans: var(--font-poppins);
+  --font-serif: var(--font-montserrat);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  /* Added typography hierarchy following FRANCA brand manual */
+  h1 {
+    @apply text-5xl font-bold font-sans; /* 54px Bold - Cabeçalho 1 */
+  }
+  h2 {
+    @apply text-3xl font-bold font-sans; /* 32px Bold - Cabeçalho 2 */
+  }
+  h3 {
+    @apply text-2xl font-medium font-sans; /* 24px Medium - Cabeçalho 3 */
+  }
+  h4 {
+    @apply text-2xl font-normal font-sans; /* 24px Regular - Cabeçalho 4 */
+  }
+  .legend {
+    @apply text-3xl font-light font-sans; /* 32px Light - Legenda */
+  }
+  .chamadas {
+    @apply text-lg font-semibold font-sans; /* 18px Semi-Bold - Chamadas */
+  }
+  .sobrelinha {
+    @apply text-base font-semibold font-sans uppercase tracking-wide; /* 16px Semi-Bold - Sobrelinha */
+  }
+  .body-big {
+    @apply text-lg font-normal font-serif; /* 18px Regular - Body Big */
+  }
+  .body-normal {
+    @apply text-base font-normal font-serif; /* 16px Regular - Body */
+  }
+  .body-bold {
+    @apply text-base font-bold font-serif; /* 16px Bold - Body Bold */
+  }
+  .body-small {
+    @apply text-sm font-normal font-serif; /* 14px Regular - Body Small */
+  }
+  .body-small-bold {
+    @apply text-sm font-bold font-serif; /* 14px Bold - Body Small Bold */
+  }
+}
